@@ -2,9 +2,9 @@
 COMPILER = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = exe
-SRC = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
-HEADERS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+NAME = identify
+SRC = Base.cpp
+HEADERS = Base.hpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp $(HEADERS)

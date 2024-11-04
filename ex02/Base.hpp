@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jholland <jholland@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 15:36:55 by jholland          #+#    #+#             */
-/*   Updated: 2024/10/29 16:54:32 by jholland         ###   ########.fr       */
+/*   Created: 2024/11/04 19:10:58 by jholland          #+#    #+#             */
+/*   Updated: 2024/11/04 19:43:55 by jholland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-#define INTERN_HPP
-#include <string>
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-class Intern
+class Base
 {
-	private:
-		AForm *shrubberyForm(std::string const target);
-		AForm *robotomyForm(std::string const target);
-		AForm *pardonForm(std::string const target);
 	public:
-		AForm	*makeForm(std::string const form_name, std::string const target);
+		virtual	~Base() = 0;
 };
+
+class A: public Base
+{
+	public:
+		virtual	~A();
+};
+
+class B: public Base
+{
+	public:
+		virtual	~B();
+};
+
+class C: public Base
+{
+	public:
+		virtual	~C();
+};
+
+
+Base	* generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
 
 #endif

@@ -5,32 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jholland <jholland@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 14:58:24 by jholland          #+#    #+#             */
-/*   Updated: 2024/10/29 15:01:42 by jholland         ###   ########.fr       */
+/*   Created: 2024/11/04 19:35:38 by jholland          #+#    #+#             */
+/*   Updated: 2024/11/04 20:17:21 by jholland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Base.hpp"
+#include <iostream>
 
-int	main( void )
+int	main(void)
 {
-	Bureaucrat b("Flanders");
-	ShrubberyCreationForm sc("home");
-	RobotomyRequestForm rr("Paul");
-	PresidentialPardonForm pp("Billy");
-	b.signForm(sc);
-	b.executeForm(sc);
-	b.setGrade(140);
-	b.signForm(sc);
-	b.executeForm(sc);
-	b.setGrade(120);
-	b.signForm(sc);
-	b.executeForm(sc);
-	b.setGrade(6);
-	b.signForm(rr);
-	b.executeForm(rr);
-	b.signForm(pp);
-	b.executeForm(pp);
+	Base *B;
+	for (int i = 0 ; i < 10 ; i++)
+	{
+		B = generate();
+		std::cout << "Ptr: [";
+		identify(B);
+		std::cout << "] - ";
+		std::cout << "Ref: [";
+		identify(*B);
+		std::cout << "]\n";
+		delete B;
+	}
 }
