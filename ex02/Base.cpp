@@ -6,7 +6,7 @@
 /*   By: jholland <jholland@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:15:45 by jholland          #+#    #+#             */
-/*   Updated: 2024/11/04 20:11:52 by jholland         ###   ########.fr       */
+/*   Updated: 2024/11/22 14:02:53 by jholland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ Base	*generate(void)
 
 void	identify(Base* p)
 {
-	if (dynamic_cast<A *>(p))
+	if (dynamic_cast<A *>(p) != NULL)
 		std::cout << "A";
-	else if (dynamic_cast<B *>(p))
+	else if (dynamic_cast<B *>(p) != NULL)
 		std::cout << "B";
-	else if (dynamic_cast<C *>(p))
+	else if (dynamic_cast<C *>(p) != NULL)
 		std::cout << "C";
 	else
 		std::cout << "Unknown";
